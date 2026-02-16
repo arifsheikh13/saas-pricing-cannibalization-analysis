@@ -67,3 +67,18 @@ SELECT
     SUM(ABS(MRR_change)) AS total_monthly_revenue_lost
 FROM subscription_events
 WHERE event_type = 'downgrade';
+
+COPY (
+    SELECT  
+        u.user_id,
+        u.signup_date,
+        r.month AS revenue_month,
+        r.mrr,
+        r.is_active
+    FROM users u
+    JOIN revenue_monthly_snapshot r
+        ON u.user_id = r.user_id
+    ORDER BY u.user_id, r.month
+)
+TO 'D:\saas_pricing_cannibalization_project\data\exports\revenue_snapshot.csv'
+WITH CSV HEADER;

@@ -29,5 +29,3 @@ FROM subscriptions s
 JOIN plans p ON s.plan_id = p.plan_id
 WHERE s.status = 'active'
 GROUP BY p.plan_name;
-
-SELECT * FROM vw_monthly_revenue LIMIT 10;
