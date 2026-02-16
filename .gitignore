@@ -1,0 +1,2 @@
+# Ignore exported data files
+data/exports/*.csv
