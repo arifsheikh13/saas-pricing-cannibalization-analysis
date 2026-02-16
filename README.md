@@ -1,24 +1,21 @@
-SaaS Pricing Cannibalization & Revenue Analytics Project
+# SaaS Pricing Cannibalization & Revenue Analytics Project
 
-Executive Summary
+## Executive Summary
 This project simulates a SaaS subscription business to analyze revenue performance, pricing dynamics, and plan behavior.
-The analysis focuses on:
 
-Monthly Recurring Revenue (MRR) trends
+### The analysis focuses on:
 
-Upgrade and downgrade behavior
-
-Revenue loss from downgrades
-
-Plan distribution shifts
-
-Potential pricing cannibalization
+1. Monthly Recurring Revenue (MRR) trends
+2. Upgrade and downgrade behavior
+3. Revenue loss from downgrades
+4. Plan distribution shifts
+5. Potential pricing cannibalization
 
 The project was built end-to-end — from synthetic data generation and SQL pipeline design to business KPI modeling and dashboard reporting.
 
 It demonstrates both data engineering and business analytics capabilities within a single structured workflow.
 
-Project Architecture
+## Project Architecture
 
 The solution follows a modular SQL pipeline with clear separation of responsibilities.
 
@@ -31,7 +28,7 @@ The solution follows a modular SQL pipeline with clear separation of responsibil
 07_analysis_queries.sql       → KPI calculations and business metrics
 08_report.sql                 → Reporting views
 
-Analytics Layer
+## Analytics Layer
 
 The revenue_monthly_snapshot table acts as the core fact table powering all business reporting and dashboard metrics.
 
@@ -39,33 +36,24 @@ This layered structure mirrors real-world data workflows:
 
 Operational tables → Transformation layer → Analytics fact table → Reporting views
 
-Business Problems Addressed
+## Business Problems Addressed
 
-Is revenue growth sustainable over time?
+1. Is revenue growth sustainable over time?
+2. How much revenue is lost due to downgrades?
+3. Are lower-tier plans cannibalizing premium plans?
+4. What is the revenue mix between new and existing users?
+5. How does plan distribution impact overall revenue stability?
 
-How much revenue is lost due to downgrades?
+## Key Metrics Developed
 
-Are lower-tier plans cannibalizing premium plans?
+- Monthly Recurring Revenue (MRR)
+- MRR growth trend
+- Downgrade impact (monthly and annualized)
+- Active users by plan
+- Revenue segmentation (New vs Existing users)
+- Plan distribution share
 
-What is the revenue mix between new and existing users?
-
-How does plan distribution impact overall revenue stability?
-
-Key Metrics Developed
-
-Monthly Recurring Revenue (MRR)
-
-MRR growth trend
-
-Downgrade impact (monthly and annualized)
-
-Active users by plan
-
-Revenue segmentation (New vs Existing users)
-
-Plan distribution share
-
-Business Insights Derived
+## Business Insights Derived
 1. Revenue Growth Is Acquisition-Driven
 
 Revenue growth was primarily driven by new user acquisition rather than expansion revenue from existing customers.
@@ -101,91 +89,70 @@ Existing users contributed the majority of recurring revenue, while new users dr
 Insight:
 Retention strategies are equally critical as acquisition strategies for maintaining predictable revenue.
 
-Dashboard
+## Dashboard
 
 The Power BI dashboard includes:
 
-MRR trend over time
-
-Plan distribution visualization
-
-Downgrade revenue impact KPI
-
-Revenue segmentation (New vs Existing users)
-
-Active users by plan
+- MRR trend over time
+- Plan distribution visualization
+- Downgrade revenue impact KPI
+- Revenue segmentation (New vs Existing users)
+- Active users by plan
 
 The dashboard translates SQL-derived metrics into executive-level decision visuals.
 
-Data Model
+## Data Model
 
-Core tables:
+### Core tables:
 
-users
+- users
+- plans
+- subscriptions
+- subscription_events
+- revenue_monthly_snapshot
 
-plans
+### The data model separates:
 
-subscriptions
-
-subscription_events
-
-revenue_monthly_snapshot
-
-The data model separates:
-
-Simulated operational data
-
-Transformed analytics layer
-
-Reporting views
+- Simulated operational data
+- Transformed analytics layer
+- Reporting views
 
 This reflects real-world warehouse architecture principles.
 
-Tech Stack
+## Tech Stack
 
-PostgreSQL
+- PostgreSQL
 
-SQL
+- SQL
 
-Power BI
+- Power BI
 
-Git
+- Git
 
-VS Code
+- VS Code
 
-Skills Demonstrated
-Data Engineering
+## Skills Demonstrated
 
-Modular SQL architecture
+### Data Engineering
 
-Fact table design
+1. Modular SQL architecture
+2. Fact table design
+3. Reporting layer using views
+4. Data transformation logic
+5. Version control best practices
 
-Reporting layer using views
+### Business Analytics
 
-Data transformation logic
+1. KPI modeling
+2. Revenue impact quantification
+3. Cannibalization risk assessment
+4. Segmentation analysis
+5. Executive-level reporting mindset
 
-Version control best practices
+## Future Enhancements
 
-Business Analytics
-
-KPI modeling
-
-Revenue impact quantification
-
-Cannibalization risk assessment
-
-Segmentation analysis
-
-Executive-level reporting mindset
-
-Future Enhancements
-
-Cohort retention analysis
-
-Customer Lifetime Value (LTV) modeling
-
-Churn probability scoring
-
-Pricing elasticity simulation
-
-A/B pricing scenario analysis
+- Cohort retention analysis
+- Customer Lifetime Value (LTV) modeling
+- Churn probability scoring
+- Pricing elasticity simulation
+- A/B pricing scenario analysis
